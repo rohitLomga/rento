@@ -25,3 +25,7 @@ yarn-error.log*
 
 # Video
 /src/rentoFinder/video1.mp4
+
+
+/src/hello.js
+/src/ImageSlide.js
