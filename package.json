@@ -6,6 +6,7 @@
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
     "@fontsource/nunito-sans": "^5.1.1",
+    "@fontsource/poor-story": "^5.1.1",
     "@fontsource/poppins": "^5.1.1",
     "@fontsource/roboto": "^5.1.1",
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
