@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Paper, Stack } from "@mui/material";
 import React from "react";
 
 // CSS
@@ -8,15 +8,18 @@ import { BasicDetails } from "../BasicDetails/BasicDetails";
 import { Amenities } from "../Amenities/Amenities";
 import { Location } from "../Location/Location";
 import { Tabs } from "./Tabs";
+import { Slideshow } from "../Slideshow/Slideshow";
 
 export const SlideshowAndDetails = () => {
   const theme = useTheme();
   const styles = slideshowAndDetailsTheme(theme);
   return (
     <Stack>
-      <Box sx={styles.mainBox}>
+      <Box component={Paper} sx={styles.mainBox}>
         {/* Slideshow */}
-        <Box sx={styles.slideshowBox}></Box>
+        <Box sx={styles.slideshowBox}>
+          <Slideshow />
+        </Box>
 
         {/* Basic Details, Amenities and Location */}
         {/* <BasicDetails /> */}

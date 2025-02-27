@@ -1,7 +1,7 @@
 export const tabTheme = (theme) => ({
   mainBox: {
     width: "100%",
-    border: "1px solid red",
+    // border: "1px solid red",
     // textTransform: "capitalize",
   },
 
