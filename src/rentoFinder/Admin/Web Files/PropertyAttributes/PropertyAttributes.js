@@ -8,6 +8,7 @@ import { SlideshowAndDetails } from "../../Components/SlideshowAndDetails/Slides
 // CSS
 import attributestheme from "../../../../CSS/Admin/AttributesTheme";
 import { useTheme } from "@mui/material/styles";
+import LongBar from "../../Components/LongBar/LongBar";
 
 export const PropertyAttributes = () => {
   const theme = useTheme();
@@ -15,16 +16,27 @@ export const PropertyAttributes = () => {
 
   return (
     <Stack>
-      <Menu />
-      <Box sx={styles.mainBox}>
-        <Box>
-          <PropertyAttribute />
+      {/* Long Bar */}
+      <LongBar />
 
-          <TableData />
+      <Box sx={styles.all}>
+        {/* Menu Items */}
+        <Box>
+          <Menu />
         </Box>
 
         <Box>
-          <SlideshowAndDetails />
+          <Box sx={styles.mainBox}>
+            <Box>
+              <PropertyAttribute />
+
+              <TableData />
+            </Box>
+
+            <Box>
+              <SlideshowAndDetails />
+            </Box>
+          </Box>
         </Box>
       </Box>
     </Stack>

@@ -24,8 +24,8 @@ yarn-error.log*
 
 
 # Video
-/src/rentoFinder/User/video1.mp4
-/src/rentoFinder/User/Components/ProductDetails/PropertyVideo/video1.mp4
+/src/rentoFinder/User/video.mp4
+# /src/rentoFinder/User/Components/ProductDetails/PropertyVideo/vi
 
 
 /src/hello.js

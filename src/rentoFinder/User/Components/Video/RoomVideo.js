@@ -1,7 +1,8 @@
 import { useState, useRef } from "react";
 import { Box, IconButton, CircularProgress, Typography } from "@mui/material";
 import { PlayCircle, ErrorOutline } from "@mui/icons-material";
-import video1 from "../../video1.mp4";
+// import video1 from "../../video1.mp4";
+import video1 from "../../video.mp4";
 
 export const Video = ({ video = video1, height }) => {
   const [isPlaying, setIsPlaying] = useState(false);

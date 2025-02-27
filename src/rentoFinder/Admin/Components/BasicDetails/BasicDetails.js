@@ -61,9 +61,7 @@ export const BasicDetails = () => {
         Edit
       </Button> */}
 
-      <Box
-        sx={{ display: "flex", width: "100%", justifyContent: "space-between" }}
-      >
+      <Box sx={styles.buttonBox}>
         {/* //TODO : Change the approve button color when working with the logics */}
         <Button variant="contained" sx={styles.approvedSellerBtn}>
           Approve

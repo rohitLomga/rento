@@ -1,10 +1,21 @@
 const attributestheme = (theme) => ({
   mainBox: {
-    mt: "-40rem",
-    ml: "18%",
+    // width: "80%",
+    mt: "5rem",
+    ml: "17rem",
     display: "flex",
     // border: "1px solid red",
-    gap: "1rem",
+    gap: "2rem",
+    flexShrink: 1,
+  },
+
+  // Whole Screen
+  all: {
+    display: "flex",
+    // overflow: "hidden",
+    flexDirection: "row",
+    gap: "2rem",
+    flexShrink: 1,
   },
 });
 

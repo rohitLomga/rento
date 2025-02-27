@@ -19,6 +19,7 @@ export const textfieldPropsTheme = (theme) => ({
     display: "flex",
     flexDirection: "column",
     width: "100%",
+    flexShrink: 1,
   },
 
   editButton: {
@@ -36,5 +37,12 @@ export const textfieldPropsTheme = (theme) => ({
     width: "100px",
     textTransform: "capitalize",
     borderRadius: 0,
+  },
+
+  // Button Box
+  buttonBox: {
+    display: "flex",
+    width: "100%",
+    justifyContent: "space-between",
   },
 });

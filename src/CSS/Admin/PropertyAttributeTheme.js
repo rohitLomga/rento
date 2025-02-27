@@ -10,6 +10,7 @@ const propertyattributetheme = (theme) => ({
     // alignItems: "center",
     padding: "1rem",
     // border: "1px solid red",
+    flexShrink: 1,
   },
 
   searchBar: {
@@ -18,6 +19,7 @@ const propertyattributetheme = (theme) => ({
     alignItems: "center",
     gap: "1rem",
     pl: "1rem",
+    flexShrink: 1,
   },
 
   propetyListText: {

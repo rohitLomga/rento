@@ -6,8 +6,12 @@ import {
   Typography,
   Box,
   Avatar,
+  MenuItem,
+  Collapse,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
 
 import rentoFinderIcon from "./homeLogo.png"; // Logo
 import profile1 from "./Profile Images/profile1.jpg"; // Profile Image 1
@@ -20,11 +24,20 @@ import { useTheme } from "@mui/material/styles";
 export const Menu = () => {
   const theme = useTheme();
   const styles = menutheme(theme);
+
+  const [open, setOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState("Dashboard");
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
+  const handleListItemClick = (item) => {
+    setActiveItem(item);
+  };
+
   return (
     <Stack sx={styles.mainMenuBox}>
-      {/* Long Bar */}
-      <Box sx={styles.longBar} />
-
       <Stack sx={styles.listItemMenu}>
         <Box sx={styles.adminLogo}>
           {/* LOGO icon */}
@@ -42,29 +55,135 @@ export const Menu = () => {
 
         {/* Datas of list */}
         <List sx={styles.listTextBox}>
-          <ListItemButton sx={styles.selectedList}>
+          {/* Dashboard */}
+          <ListItemButton
+            sx={{
+              ...styles.spacingList,
+              backgroundColor:
+                activeItem === "Dashboard" ? "#FFFFFF" : "inherit",
+              color: activeItem === "Dashboard" ? "#282828" : "inherit",
+              ":hover": {
+                backgroundColor:
+                  activeItem === "Dashboard" ? "#FFFFFF" : "inherit",
+              },
+            }}
+            onClick={() => handleListItemClick("Dashboard")}
+          >
             <ListItemText primary="Dashboard" />
           </ListItemButton>
 
-          <ListItemButton sx={styles.spacingList}>
+          {/* Property Attribute */}
+          <ListItemButton
+            sx={{
+              ...styles.spacingList,
+              backgroundColor:
+                activeItem === "Property attribute" ? "#FFFFFF" : "inherit",
+              color:
+                activeItem === "Property attribute" ? "#282828" : "inherit",
+              ":hover": {
+                backgroundColor:
+                  activeItem === "Property attribute" ? "#FFFFFF" : "inherit",
+              },
+            }}
+            onClick={() => handleListItemClick("Property attribute")}
+          >
             <ListItemText primary="Property attribute" />
           </ListItemButton>
-          <ListItemButton sx={styles.spacingList}>
+
+          {/* Seller Verification */}
+          <ListItemButton
+            sx={{
+              ...styles.spacingList,
+              backgroundColor:
+                activeItem === "Seller verification" ? "#FFFFFF" : "inherit",
+              color:
+                activeItem === "Seller verification" ? "#282828" : "inherit",
+              ":hover": {
+                backgroundColor:
+                  activeItem === "Seller verification" ? "#FFFFFF" : "inherit",
+              },
+            }}
+            onClick={() => {
+              handleListItemClick("Seller verification");
+              handleClick();
+            }}
+          >
             <ListItemText primary="Seller verification" />
+            {open ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
-          <ListItemButton sx={styles.spacingList}>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <MenuItem sx={styles.menuItem}>Approved Seller</MenuItem>
+              <MenuItem sx={styles.menuItem}>Pending Approval</MenuItem>
+              <MenuItem sx={styles.menuItem}>Seller On Hold</MenuItem>
+              <MenuItem sx={styles.menuItem}>Seller Form</MenuItem>
+            </List>
+          </Collapse>
+
+          {/* Rating Manager */}
+          <ListItemButton
+            sx={{
+              ...styles.spacingList,
+              backgroundColor:
+                activeItem === "Rating manager" ? "#FFFFFF" : "inherit",
+              color: activeItem === "Rating manager" ? "#282828" : "inherit",
+              ":hover": {
+                backgroundColor:
+                  activeItem === "Rating manager" ? "#FFFFFF" : "inherit",
+              },
+            }}
+            onClick={() => handleListItemClick("Rating manager")}
+          >
             <ListItemText primary="Rating manager" />
           </ListItemButton>
-          <ListItemButton sx={styles.spacingList}>
+
+          {/* Attribute Setting */}
+          <ListItemButton
+            sx={{
+              ...styles.spacingList,
+              backgroundColor:
+                activeItem === "Attribute Setting" ? "#FFFFFF" : "inherit",
+              color: activeItem === "Attribute Setting" ? "#282828" : "inherit",
+              ":hover": {
+                backgroundColor:
+                  activeItem === "Attribute Setting" ? "#FFFFFF" : "inherit",
+              },
+            }}
+            onClick={() => handleListItemClick("Attribute Setting")}
+          >
             <ListItemText primary="Attribute Setting" />
           </ListItemButton>
 
           {/* Lower side */}
-          <ListItemButton sx={styles.lowerList}>
+          {/* Setting */}
+          <ListItemButton
+            sx={{
+              ...styles.lowerList,
+              backgroundColor: activeItem === "Setting" ? "#FFFFFF" : "inherit",
+              color: activeItem === "Setting" ? "#282828" : "inherit",
+              ":hover": {
+                backgroundColor:
+                  activeItem === "Setting" ? "#FFFFFF" : "inherit",
+              },
+            }}
+            onClick={() => handleListItemClick("Setting")}
+          >
             <ListItemText primary="Setting" />
           </ListItemButton>
 
-          <ListItemButton sx={styles.spacingList}>
+          {/* Support */}
+          <ListItemButton
+            sx={{
+              ...styles.spacingList,
+              backgroundColor: activeItem === "Support" ? "#FFFFFF" : "inherit",
+              color: activeItem === "Support" ? "#282828" : "inherit",
+              ":hover": {
+                backgroundColor:
+                  activeItem === "Support" ? "#FFFFFF" : "inherit",
+              },
+            }}
+            onClick={() => handleListItemClick("Support")}
+          >
             <ListItemText primary="Support" />
           </ListItemButton>
         </List>

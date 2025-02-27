@@ -1,19 +1,27 @@
 const menutheme = (theme) => ({
   mainMenuBox: {
     display: "flex",
-    flexDirection: "row-reverse",
-    width: "100%",
+    // flexDirection: "row-reverse",
+    width: "18%",
+    flexShrink: 1,
+    position: "fixed",
+    zIndex: 12,
   },
 
   longBar: {
+    position: "fixed",
+    zIndex: 10,
     width: "100%",
     height: "60px",
+    overflow: "hidden",
     backgroundColor: theme.components.Palette.primary.adminMenu,
   },
+
   listItemMenu: {
-    width: "20%",
+    width: "100%",
     backgroundColor: theme.components.Palette.primary.adminMenu,
     display: "flex",
+    flexShrink: 1,
     // height: "100vh",
     // padding: "1rem",
   },
@@ -22,7 +30,7 @@ const menutheme = (theme) => ({
     color: "white",
     // justifyContent: "center",
     height: "28px",
-    mt: "1rem",
+    mt: "2rem",
     ml: "1.5rem",
   },
   rentoFinderLogoText: {
@@ -59,6 +67,9 @@ const menutheme = (theme) => ({
     color: theme.components.Palette.primary.white,
     cursor: "pointer",
   },
+
+  // Menu Item
+  menuItem: { pl: "3rem" },
 });
 
 export default menutheme;
