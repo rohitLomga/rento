@@ -16,6 +16,7 @@ import { AddReview } from "../AddReview/AddReview";
 import { RelatedProperties } from "../RelatedProperties/RelatedProperties";
 import { TopButton } from "../TopButton/TopButton";
 import { Floor } from "../FloorPlan/Floor";
+import { Maps } from "../Maps/Maps";
 
 export const LeftSideContainer = ({ sell }) => {
   return (
@@ -93,6 +94,7 @@ export const LeftSideContainer = ({ sell }) => {
       <AmenitiesDetails />
 
       {/* //! Ask how to set google maps */}
+      <Maps />
 
       {/* Blueprint image of the propety */}
       {sell ? <Floor /> : ""}

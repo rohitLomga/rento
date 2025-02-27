@@ -17,7 +17,6 @@ export const BuySellRent = ({
       <Box>
         <Box
           sx={{
-            border: "1px solid black",
             width: "80%",
             padding: "1rem",
             display: "flex",
@@ -26,6 +25,7 @@ export const BuySellRent = ({
             textAlign: "center",
             gap: "1rem",
             mt: "2rem",
+            backgroundColor: "#FFFFFF",
           }}
         >
           <Box component="img" src={home} />

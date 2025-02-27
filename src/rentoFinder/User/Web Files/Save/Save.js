@@ -39,7 +39,7 @@ export const Save = () => {
           width: "20vw",
           display: "flex",
           mt: "60px",
-          ml: "20%",
+          ml: "15%",
           gap: "3rem",
           //   margin: "auto",
           // border: "1px solid red",

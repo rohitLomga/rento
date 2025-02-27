@@ -4,8 +4,13 @@ import { ListDetails } from "../../Components/Profile/ListDetails";
 import { RentAndSellRoom } from "../../Components/FilterPage/FilterRoom/RentAndSellRoom";
 import Navbar from "../../Components/NavbarAndFooter/Navbar";
 import Footer from "../../Components/NavbarAndFooter/Footer";
+import myproperties from "../../../../CSS/myPropertiestheme";
+import { useTheme } from "@mui/material/styles";
 
 export const MyProperties = () => {
+  const theme = useTheme();
+  const styles = myproperties(theme);
+
   // Details of the room
   const room = [
     {
@@ -37,15 +42,7 @@ export const MyProperties = () => {
     <Stack>
       {/* Navbar */}
       <Navbar />
-      <Box
-        sx={{
-          width: "20vw",
-          display: "flex",
-          mt: "60px",
-          ml: "10%",
-          gap: "3rem",
-        }}
-      >
+      <Box sx={styles.mainBox}>
         {/* List items */}
         <ListDetails />
 

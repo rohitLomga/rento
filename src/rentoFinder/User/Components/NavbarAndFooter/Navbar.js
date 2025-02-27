@@ -17,42 +17,32 @@ import XIcon from "@mui/icons-material/X"; // X icon
 import InstagramIcon from "@mui/icons-material/Instagram"; // Instagram icon
 import TwitterIcon from "@mui/icons-material/Twitter"; // Twitter icon
 
+// CSS THEME
+import { useTheme } from "@mui/material/styles";
+import navbartheme from "../../../../CSS/User/NavbarTheme";
+
 // Navbar Component
 export default function Navbar() {
+  const theme = useTheme();
+  const styles = navbartheme(theme);
+
   return (
     <Stack>
       {/* Upper bar */}
-      <AppBar
-        position="static"
-        sx={{
-          height: 40,
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "row",
-          justifyContent: "space-around",
-          backgroundColor: "#0D2C43",
-        }}
-      >
-        <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <EmailIcon sx={{ color: "#FF5A3C" }} />
+      <AppBar position="static" sx={styles.mainBox}>
+        <Box sx={styles.emailAndLocationBox}>
+          <EmailIcon sx={styles.iconColor} />
           <Typography variant="h6" component="span">
             info@webmail.com
           </Typography>
-          <LocationOnRoundedIcon
-            sx={{ color: "#FF5A3C", marginLeft: "20px" }}
-          />{" "}
+
           {/* Location Icon */}
+          <LocationOnRoundedIcon sx={styles.locationIcon} />
+
           <Typography variant="h6">15/A, Nest Tower, NYC</Typography>
         </Box>
 
-        <Box
-          gap={2}
-          sx={{
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-          }}
-        >
+        <Box gap={2} sx={styles.icons}>
           <FacebookRoundedIcon />
           <TwitterIcon /> {/* X - Twitter Icon */}
           <InstagramIcon /> {/* Instagram Icon */}
@@ -62,8 +52,8 @@ export default function Navbar() {
 
       {/* Lower bar */}
       <AppBar color="common.white" position="static">
-        <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
-          <Box sx={{ display: "flex", alignItems: "baseline" }}>
+        <Toolbar sx={styles.lowerBar}>
+          <Box sx={styles.logoAndText}>
             {/* <IconButton size='large'> Icon of the logo Rento Finder
                         <Typography>Hello</Typography>
                     </IconButton> */}
@@ -76,7 +66,7 @@ export default function Navbar() {
             </Typography>
           </Box>
 
-          <Box sx={{ display: "flex", gap: "15px" }}>
+          <Box sx={styles.middleText}>
             <Typography>Home</Typography>
             <Typography>About</Typography>
             <Typography>Property</Typography>
@@ -84,14 +74,11 @@ export default function Navbar() {
             <Typography>Contact</Typography>
           </Box>
 
-          <Box sx={{ display: "flex", gap: "15px" }}>
-            <Button variant="contained" sx={{ backgroundColor: "#FF5A3C" }}>
+          <Box sx={styles.buttons}>
+            <Button variant="contained" sx={styles.locationButton}>
               Location
             </Button>
-            <Button
-              variant="outlined"
-              sx={{ borderColor: "#FF5A3C", color: "#0C2C41" }}
-            >
+            <Button variant="outlined" sx={styles.loginButton}>
               Log In
             </Button>
           </Box>

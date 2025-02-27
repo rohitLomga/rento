@@ -18,18 +18,21 @@ import { PaymentAndCartSelling } from "./rentoFinder/User/Web Files/PaymentAndCa
 import { OrderSummary } from "./rentoFinder/User/Web Files/OrderSummary/OrderSummary";
 import { Congratulations } from "./rentoFinder/User/Web Files/Congratulations/Congratulations";
 import { AboutUs } from "./rentoFinder/User/Web Files/AboutUs/AboutUs";
+import { Dashboard } from "./rentoFinder/Admin/Web Files/Dashboard/Dashboard";
+import themeOptions from "./CSS";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { PropertyAttributes } from "./rentoFinder/Admin/Web Files/PropertyAttributes/PropertyAttributes";
 
-function App() {
+const App = () => {
+  const theme = createTheme(themeOptions);
   return (
-    <div>
-      {/* <MyProperties /> */}
-      {/* <FavouritedProperties /> */}
-      {/* <PaymentAndCartSelling /> */}
-      {/* <OrderSummary /> */}
-      {/* <Congratulations /> */}
-      <AboutUs />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <PropertyAttributes />
+        {/* <ProductDetailsRenting /> */}
+      </div>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

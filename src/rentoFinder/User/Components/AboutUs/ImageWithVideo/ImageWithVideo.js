@@ -12,6 +12,8 @@ export const ImageWithVideo = () => {
         sx={{
           width: "65%",
           mt: "5rem",
+          position: "relative",
+          zIndex: 1,
         }}
       >
         <Box
@@ -29,8 +31,8 @@ export const ImageWithVideo = () => {
               width: "330px",
               overflow: "hidden",
               padding: "10px",
-              position: "relative",
-              zIndex: 1,
+              // position: "relative",
+              // zIndex: 2,
               boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)", // Soft shadow effect
             }}
           >
@@ -47,9 +49,9 @@ export const ImageWithVideo = () => {
                 height: "150px",
                 backgroundColor: "black",
                 position: "absolute",
-                top: "65%",
-                left: "-18%",
-                zIndex: 2,
+                top: "66%",
+                left: "1%",
+                zIndex: 3,
               }}
             >
               <Video height="100%" />
