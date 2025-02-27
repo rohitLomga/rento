@@ -1,4 +1,4 @@
-import { Button, Stack, TextField } from "@mui/material";
+import { Button, Stack, TextField, Box } from "@mui/material";
 
 // CSS
 import { textfieldPropsTheme } from "../../../../CSS/Admin/TextFieldPropsTheme";
@@ -57,9 +57,24 @@ export const BasicDetails = () => {
         <TextFieldProps {...datas} />
       ))}
 
-      <Button variant="contained" sx={styles.editButton}>
+      {/* <Button variant="contained" sx={styles.editButton}>
         Edit
-      </Button>
+      </Button> */}
+
+      <Box
+        sx={{ display: "flex", width: "100%", justifyContent: "space-between" }}
+      >
+        {/* //TODO : Change the approve button color when working with the logics */}
+        <Button variant="contained" sx={styles.approvedSellerBtn}>
+          Approve
+        </Button>
+        <Button variant="contained" sx={styles.approvedSellerBtn}>
+          Decline
+        </Button>
+        <Button variant="contained" sx={styles.approvedSellerBtn}>
+          Hold
+        </Button>
+      </Box>
     </Stack>
   );
 };

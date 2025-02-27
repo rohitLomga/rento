@@ -26,5 +26,15 @@ export const textfieldPropsTheme = (theme) => ({
     p: "5px 2rem",
     textTransform: "capitalize",
     alignSelf: "flex-end",
+    borderRadius: 0,
+  },
+
+  // Approved seller buttons
+  approvedSellerBtn: {
+    backgroundColor: theme.components.Palette.primary.rentoFinderColorTheme,
+    // p: "5px 1rem",
+    width: "100px",
+    textTransform: "capitalize",
+    borderRadius: 0,
   },
 });

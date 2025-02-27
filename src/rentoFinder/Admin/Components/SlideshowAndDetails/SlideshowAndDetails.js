@@ -10,6 +10,8 @@ import { Location } from "../Location/Location";
 import { Tabs } from "./Tabs";
 import { Slideshow } from "../Slideshow/Slideshow";
 
+import CloseIcon from "@mui/icons-material/Close"; // Close icon
+
 export const SlideshowAndDetails = () => {
   const theme = useTheme();
   const styles = slideshowAndDetailsTheme(theme);
@@ -18,11 +20,11 @@ export const SlideshowAndDetails = () => {
       <Box component={Paper} sx={styles.mainBox}>
         {/* Slideshow */}
         <Box sx={styles.slideshowBox}>
+          <CloseIcon sx={styles.closeIcon} />
           <Slideshow />
         </Box>
 
         {/* Basic Details, Amenities and Location */}
-        {/* <BasicDetails /> */}
         <Tabs />
       </Box>
     </Stack>
