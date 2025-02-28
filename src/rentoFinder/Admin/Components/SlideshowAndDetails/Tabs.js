@@ -36,9 +36,9 @@ export const Tabs = () => {
             aria-label="Tabs"
             sx={styles.tabList}
           >
-            <Tab label="Basic Details" value="1" />
-            <Tab label="Amenities" value="2" />
-            <Tab label="Location" value="3" />
+            <Tab label="Basic Details" value="1" sx={styles.tabLabel} />
+            <Tab label="Amenities" value="2" sx={styles.tabLabel} />
+            <Tab label="Location" value="3" sx={styles.tabLabel} />
           </TabList>
         </Box>
 

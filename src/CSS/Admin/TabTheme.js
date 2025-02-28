@@ -28,4 +28,7 @@ export const tabTheme = (theme) => ({
       backgroundColor: "#9C9C9C", // Change the blue indicator color to your desired color
     },
   },
+
+  // Tab Label
+  tabLabel: { textTransform: "capitalize" },
 });

@@ -22,14 +22,16 @@ import { Dashboard } from "./rentoFinder/Admin/Web Files/Dashboard/Dashboard";
 import themeOptions from "./CSS";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { PropertyAttributes } from "./rentoFinder/Admin/Web Files/PropertyAttributes/PropertyAttributes";
+import AdminRouter from "./rentoFinder/Admin/Web Files/Router/Router";
 
 const App = () => {
   const theme = createTheme(themeOptions);
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <PropertyAttributes />
+        {/* <PropertyAttributes /> */}
         {/* <ProductDetailsRenting /> */}
+        <AdminRouter />
       </div>
     </ThemeProvider>
   );

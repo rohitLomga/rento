@@ -20,10 +20,24 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight"; // 
 // Theme
 import menutheme from "../../../../CSS/Admin/MenuTheme"; // CSS OF MENU
 import { useTheme } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 export const Menu = () => {
+  // CSS Theme
   const theme = useTheme();
   const styles = menutheme(theme);
+
+  const navigate = useNavigate();
+
+  // Function to move to dashboard
+  function MoveToDashboard() {
+    navigate("/dashboard");
+  }
+
+  // Move to property attribute
+  function MoveToPropertyAttribute() {
+    navigate("/");
+  }
 
   const [open, setOpen] = useState(false);
   const [activeItem, setActiveItem] = useState("Dashboard");
@@ -67,7 +81,10 @@ export const Menu = () => {
                   activeItem === "Dashboard" ? "#FFFFFF" : "inherit",
               },
             }}
-            onClick={() => handleListItemClick("Dashboard")}
+            onClick={() => {
+              handleListItemClick("Dashboard");
+              MoveToDashboard();
+            }}
           >
             <ListItemText primary="Dashboard" />
           </ListItemButton>
@@ -85,7 +102,10 @@ export const Menu = () => {
                   activeItem === "Property attribute" ? "#FFFFFF" : "inherit",
               },
             }}
-            onClick={() => handleListItemClick("Property attribute")}
+            onClick={() => {
+              handleListItemClick("Property attribute");
+              MoveToPropertyAttribute();
+            }}
           >
             <ListItemText primary="Property attribute" />
           </ListItemButton>
